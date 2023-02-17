@@ -19,7 +19,12 @@
                 </div>
             </div>
         </div>
-        <ChatView class="mt-[100px]" />
+        <div v-if="showFindFriends">
+            <ChatView class="mt-[100px]" />
+        </div>
+        <div v-else>
+            <FindFriendsView />
+        </div>
         <div v-if="open">
             <MessageView />
         </div>
@@ -48,11 +53,11 @@ import AccountGroupIcon from 'vue-material-design-icons/AccountGroup.vue'
 import DotsVerticalIcon from 'vue-material-design-icons/DotsVertical.vue'
 import MagnifyIcon from 'vue-material-design-icons/Magnify.vue'
 import ChatView from './ChatView.vue'
+import FindFriendsView from './FindFriendsView.vue';
 import MessageView from './MessageView.vue'
 
 let open = ref(true)
+let showFindFriends = ref(false)
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
